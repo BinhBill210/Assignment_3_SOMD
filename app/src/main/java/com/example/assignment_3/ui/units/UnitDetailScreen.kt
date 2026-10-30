@@ -131,7 +131,8 @@ fun UnitDetailContent(
             if (content != null) {
                 ExtendedFloatingActionButton(
                     onClick = { onAddAssessment(content.unit.id) },
-                    icon = { Icon(Icons.Filled.Add, contentDescription = null) },
+                    // ExtendedFAB hides its text from accessibility and takes its label from the icon.
+                    icon = { Icon(Icons.Filled.Add, contentDescription = "Add assessment") },
                     text = { Text("Add assessment") }
                 )
             }

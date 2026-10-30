@@ -52,7 +52,8 @@ fun UnitListContent(
         floatingActionButton = {
             ExtendedFloatingActionButton(
                 onClick = onAddUnit,
-                icon = { Icon(Icons.Filled.Add, contentDescription = null) },
+                // ExtendedFAB hides its text from accessibility and takes its label from the icon.
+                icon = { Icon(Icons.Filled.Add, contentDescription = "Add unit") },
                 text = { Text("Add unit") }
             )
         }

@@ -103,7 +103,7 @@ class StudyHiveAppTest {
         seedUnitWithAssessment()
         launch()
         compose.onNodeWithText("Units").performClick()
-        compose.onNodeWithText("Add unit").performClick()
+        compose.onNodeWithContentDescription("Add unit").performClick()
         compose.onNodeWithTag("Unit code").performTextInput("COS30017")
         compose.onNodeWithTag("Unit name").performTextInput("Duplicate")
         compose.onNodeWithTag("Weekly study target (hours)").performTextInput("8")
@@ -122,7 +122,7 @@ class StudyHiveAppTest {
         compose.onNodeWithText("Mobile Development").performClick()
         waitForText("40% of 100% weighting allocated")
 
-        compose.onNodeWithText("Add assessment").performClick()
+        compose.onNodeWithContentDescription("Add assessment").performClick()
         waitForText("New assessment · COS30017")
         compose.onNodeWithText("40% already allocated to other assessments in this unit").assertExists()
 
@@ -155,6 +155,7 @@ class StudyHiveAppTest {
         compose.onNodeWithTag("assessment_detail_list").performScrollToNode(hasText("45 min"))
         compose.onNodeWithContentDescription("Delete session").performClick()
         waitForText("Total 0 min")
+        waitForText("Undo")
         compose.onNodeWithText("Undo").performClick()
         waitForText("Total 45 min")
     }
