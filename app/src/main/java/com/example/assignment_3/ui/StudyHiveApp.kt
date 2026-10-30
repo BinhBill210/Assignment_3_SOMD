@@ -64,12 +64,14 @@ fun StudyHiveApp(navController: NavHostController = rememberNavController()) {
     val currentDestination = backStackEntry?.destination
     val showBottomBar = topLevelDestinations.any { dest -> currentDestination?.hasRoute(dest.routeClass) == true }
 
+    // SnackbarHostState queues messages; replace the visible one so an Undo is never stuck behind stale info.
     val showSnackbar: suspend (String, String?) -> Boolean = { text, action ->
+        snackbarHostState.currentSnackbarData?.dismiss()
         snackbarHostState.showSnackbar(text, action, duration = SnackbarDuration.Short) == SnackbarResult.ActionPerformed
     }
     val popWithMessage: (String) -> Unit = { text ->
         navController.popBackStack()
-        appScope.launch { snackbarHostState.showSnackbar(text) }
+        appScope.launch { showSnackbar(text, null) }
     }
 
     Scaffold(
