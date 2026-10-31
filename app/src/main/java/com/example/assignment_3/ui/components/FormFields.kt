@@ -35,6 +35,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
@@ -50,7 +51,6 @@ import java.time.LocalDate
 import java.time.LocalTime
 import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
-import java.util.Locale
 
 /** Outlined field whose error text is also exposed to TalkBack through the error semantics. */
 @Composable
@@ -156,7 +156,7 @@ fun DateField(
 fun TimeField(label: String, time: LocalTime, onTimeSelected: (Int, Int) -> Unit, modifier: Modifier = Modifier) {
     var open by rememberSaveable { mutableStateOf(false) }
     PickerField(
-        value = time.format(DateTimeFormatter.ofPattern("h:mm a", Locale.getDefault())),
+        value = time.format(DateTimeFormatter.ofPattern("h:mm a", LocalConfiguration.current.locales[0])),
         label = label,
         error = null,
         icon = { Icon(Icons.Outlined.Schedule, contentDescription = "Choose $label") },

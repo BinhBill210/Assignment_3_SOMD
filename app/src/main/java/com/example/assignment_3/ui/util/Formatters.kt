@@ -7,16 +7,17 @@ import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
 import java.util.Locale
 
-private val dueFormatter = DateTimeFormatter.ofPattern("EEE d MMM, h:mm a", Locale.getDefault())
-private val dateFormatter = DateTimeFormatter.ofPattern("EEE d MMM yyyy", Locale.getDefault())
+// Built per call rather than cached, so a language change while the app is running is respected.
+private fun dueFormatter() = DateTimeFormatter.ofPattern("EEE d MMM, h:mm a", Locale.getDefault())
+private fun dateFormatter() = DateTimeFormatter.ofPattern("EEE d MMM yyyy", Locale.getDefault())
 
 fun formatDueDateTime(millis: Long, zone: ZoneId = ZoneId.systemDefault()): String =
-    Instant.ofEpochMilli(millis).atZone(zone).format(dueFormatter)
+    Instant.ofEpochMilli(millis).atZone(zone).format(dueFormatter())
 
 fun formatDate(millis: Long, zone: ZoneId = ZoneId.systemDefault()): String =
-    Instant.ofEpochMilli(millis).atZone(zone).format(dateFormatter)
+    Instant.ofEpochMilli(millis).atZone(zone).format(dateFormatter())
 
-fun formatDate(date: LocalDate): String = date.format(dateFormatter)
+fun formatDate(date: LocalDate): String = date.format(dateFormatter())
 
 /** Human countdown used on cards, e.g. "Due in 3 days", "Due today", "Overdue by 2 days". */
 fun formatRelativeDue(dueAtMillis: Long, nowMillis: Long, zone: ZoneId = ZoneId.systemDefault()): String {
