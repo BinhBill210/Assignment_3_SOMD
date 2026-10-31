@@ -123,11 +123,10 @@ fun UnitProgressCard(progress: UnitProgress, onClick: () -> Unit, modifier: Modi
     else (progress.minutesThisWeek.toFloat() / progress.targetMinutesPerWeek).coerceIn(0f, 1f)
     val hoursText = "${formatMinutes(progress.minutesThisWeek)} of ${formatMinutes(progress.targetMinutesPerWeek)} this week"
     val assessmentsText = "${progress.submittedCount}/${progress.assessmentCount} assessments submitted"
+    // A clickable Card already merges its children into one TalkBack item; a nested merge here
+    // would split the card into an unlabelled button plus a separate text block.
     Card(onClick = onClick, modifier = modifier) {
-        Column(
-            Modifier.padding(16.dp).semantics(mergeDescendants = true) {},
-            verticalArrangement = Arrangement.spacedBy(6.dp)
-        ) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 UnitColorDot(progress.colorIndex)
                 Spacer(Modifier.width(8.dp))

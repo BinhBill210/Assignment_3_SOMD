@@ -1,10 +1,16 @@
 package com.example.assignment_3.ui.components
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
@@ -36,6 +42,20 @@ fun LoadingState(modifier: Modifier = Modifier) {
     }
 }
 
+/** Centred when it fits; scrolls instead of clipping its action in landscape or at large font sizes. */
+@Composable
+private fun CenteredScrollColumn(modifier: Modifier, content: @Composable ColumnScope.() -> Unit) {
+    BoxWithConstraints(modifier.fillMaxSize()) {
+        Column(
+            modifier = Modifier.verticalScroll(rememberScrollState())
+                .heightIn(min = maxHeight).fillMaxWidth().padding(32.dp),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
+            content = content
+        )
+    }
+}
+
 @Composable
 fun EmptyState(
     icon: ImageVector,
@@ -45,11 +65,7 @@ fun EmptyState(
     actionLabel: String? = null,
     onAction: () -> Unit = {}
 ) {
-    Column(
-        modifier = modifier.fillMaxSize().padding(32.dp).testTag("empty_state"),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
+    CenteredScrollColumn(modifier.testTag("empty_state")) {
         Icon(icon, contentDescription = null, modifier = Modifier.size(64.dp), tint = MaterialTheme.colorScheme.primary)
         Spacer(Modifier.height(16.dp))
         Text(title, style = MaterialTheme.typography.titleLarge, textAlign = TextAlign.Center)
@@ -69,11 +85,7 @@ fun EmptyState(
 
 @Composable
 fun ErrorState(message: String, modifier: Modifier = Modifier, onRetry: (() -> Unit)? = null) {
-    Column(
-        modifier = modifier.fillMaxSize().padding(32.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
+    CenteredScrollColumn(modifier) {
         Icon(
             Icons.Outlined.ErrorOutline,
             contentDescription = null,
