@@ -147,6 +147,13 @@ class AssessmentFormViewModel(
         status.update { s -> if (s.attemptedSave) s.copy(errors = validate(draft.value, s.otherWeightingTotal)) else s }
     }
 
+    /** Shows errors immediately; lets the screen avoid asking for permissions for a form that can't be saved. */
+    fun validateForSave(): Boolean {
+        val errors = validate(draft.value, status.value.otherWeightingTotal)
+        status.update { it.copy(attemptedSave = true, errors = errors) }
+        return errors.isValid
+    }
+
     fun save() {
         if (status.value.isSaving || status.value.isLoading) return
         status.update { it.copy(isSaving = true, attemptedSave = true) }

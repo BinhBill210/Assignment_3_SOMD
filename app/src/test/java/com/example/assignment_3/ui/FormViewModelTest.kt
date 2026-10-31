@@ -212,6 +212,18 @@ class AssessmentFormViewModelTest {
     }
 
     @Test
+    fun validateForSave_showsErrorsWithoutSaving_soNoPermissionPromptForInvalidForm() = runTest {
+        val vm = newVm()
+        assertFalse(vm.validateForSave())
+        assertNotNull(vm.uiState.value.errors.title)
+        assertTrue(assessments.assessments.value.isEmpty())
+
+        vm.fillValid()
+        assertTrue(vm.validateForSave())
+        assertTrue(assessments.assessments.value.isEmpty())
+    }
+
+    @Test
     fun repositoryFailure_surfacesMessage() = runTest {
         assessments.failWrites = true
         val vm = newVm()

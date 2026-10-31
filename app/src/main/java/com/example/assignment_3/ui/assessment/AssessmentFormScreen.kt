@@ -80,12 +80,13 @@ fun AssessmentFormScreen(
         }
     }
 
-    // The permission is requested in context - only when the user saves an assessment that has a
+    // The permission is requested in context - only when the user saves a valid assessment that has a
     // reminder - and saving goes ahead whatever they answer, so refusing never blocks their work.
     val permissionLauncher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {
         viewModel.save()
     }
-    val onSave = {
+    val onSave = onSave@{
+        if (!viewModel.validateForSave()) return@onSave
         val needsPermission = state.draft.reminder != ReminderOption.OFF &&
             Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
             ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) !=
