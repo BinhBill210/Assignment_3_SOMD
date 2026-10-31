@@ -2,6 +2,7 @@ package com.example.assignment_3.ui
 
 import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.hasClickAction
+import androidx.compose.ui.test.hasContentDescription
 import androidx.compose.ui.test.hasSetTextAction
 import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.hasText
@@ -61,8 +62,12 @@ class StudyHiveAppTest {
 
     private fun launch() = compose.setContent { StudyHiveTheme { StudyHiveApp() } }
 
+    // Room queries run on its own executor, which Compose's idling sync doesn't track, so wait explicitly.
     private fun waitForText(text: String, substring: Boolean = false) =
         compose.waitUntilAtLeastOneExists(hasText(text, substring = substring), timeoutMillis = 5_000)
+
+    private fun waitForDescription(description: String) =
+        compose.waitUntilAtLeastOneExists(hasContentDescription(description), timeoutMillis = 5_000)
 
     private fun seedUnitWithAssessment(status: AssessmentStatus = AssessmentStatus.NOT_STARTED): Pair<Long, Long> = runBlocking {
         val unitId = container.database.studyUnitDao()
@@ -80,6 +85,7 @@ class StudyHiveAppTest {
     @Test
     fun createUnit_fromEmptyDashboard_appearsOnDashboard() {
         launch()
+        waitForText("Add your first unit")
         compose.onNodeWithText("Add your first unit").performClick()
 
         compose.onNodeWithTag("save_unit").performClick()
@@ -103,6 +109,7 @@ class StudyHiveAppTest {
         seedUnitWithAssessment()
         launch()
         compose.onNodeWithText("Units").performClick()
+        waitForDescription("Add unit")
         compose.onNodeWithContentDescription("Add unit").performClick()
         compose.onNodeWithTag("Unit code").performTextInput("COS30017")
         compose.onNodeWithTag("Unit name").performTextInput("Duplicate")
@@ -147,6 +154,7 @@ class StudyHiveAppTest {
 
         // Log a session through the bottom sheet.
         compose.onNodeWithText("Log session").performClick()
+        compose.waitUntilAtLeastOneExists(hasTestTag("save_session"), timeoutMillis = 5_000)
         compose.onNode(hasSetTextAction() and hasTestTag("Duration (minutes)")).performTextInput("45")
         compose.onNodeWithTag("save_session").performClick()
         waitForText("Total 45 min")
@@ -184,6 +192,7 @@ class StudyHiveAppTest {
         launch()
         waitForText("Mobile Development")
         compose.onNodeWithText("Mobile Development").performClick()
+        waitForText("40% of 100% weighting allocated")
         compose.onNodeWithContentDescription("Delete unit").performClick()
         waitForText("This also deletes 1 assessment(s) and 0 study session(s)", substring = true)
         compose.onNodeWithText("Delete").performClick()
