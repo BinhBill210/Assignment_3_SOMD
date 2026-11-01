@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuites tests="39" failures="0" errors="0" skipped="0" time="140.545" timestamp="2026-11-01T05:13:20" hostname="localhost">
+  <testsuite name="com.example.assignment_3.data.RepositoryIntegrationTest" tests="7" failures="0" errors="0" skipped="0" time="0.066" timestamp="2026-11-01T05:13:20" hostname="localhost">
+    <properties>
+      <property name="device" value="Pixel_8(AVD) - 14" />
+      <property name="flavor" value="" />
+      <property name="project" value=":app" />
+    </properties>
+    <testcase name="submitting_cancelsReminder_andReopeningReschedules" classname="com.example.assignment_3.data.RepositoryIntegrationTest" time="0.051" />
+    <testcase name="deletedSession_canBeRestoredWithTheSameId" classname="com.example.assignment_3.data.RepositoryIntegrationTest" time="0.001" />
+    <testcase name="savingAssessment_schedulesReminderAtDueMinusOffset" classname="com.example.assignment_3.data.RepositoryIntegrationTest" time="0.0" />
+    <testcase name="deletingUnit_cancelsEveryChildReminder" classname="com.example.assignment_3.data.RepositoryIntegrationTest" time="0.001" />
+    <testcase name="duplicateUnitCode_isTranslatedToDomainException" classname="com.example.assignment_3.data.RepositoryIntegrationTest" time="0.003" />
+    <testcase name="editingUnitToAnotherUnitsCode_isRejected" classname="com.example.assignment_3.data.RepositoryIntegrationTest" time="0.007" />
+    <testcase name="reminderOff_orTriggerPassed_cancelsInsteadOfScheduling" classname="com.example.assignment_3.data.RepositoryIntegrationTest" time="0.003" />
+  </testsuite>
+  <testsuite name="com.example.assignment_3.data.StudyHiveDaoTest" tests="10" failures="0" errors="0" skipped="0" time="0.248" timestamp="2026-11-01T05:13:20" hostname="localhost">
+    <properties>
+      <property name="device" value="Pixel_8(AVD) - 14" />
+      <property name="flavor" value="" />
+      <property name="project" value=":app" />
+    </properties>
+    <testcase name="duplicateUnitCode_isRejectedByUniqueIndex" classname="com.example.assignment_3.data.StudyHiveDaoTest" time="0.005" />
+    <testcase name="progressQuery_countsAndFiltersSessionsToTheWeek" classname="com.example.assignment_3.data.StudyHiveDaoTest" time="0.003" />
+    <testcase name="outstanding_excludesSubmitted_andOrdersByDueDate" classname="com.example.assignment_3.data.StudyHiveDaoTest" time="0.059" />
+    <testcase name="deletingUnit_cascadesToAssessmentsAndSessions" classname="com.example.assignment_3.data.StudyHiveDaoTest" time="0.031" />
+    <testcase name="updateStatus_changesOnlyThatRow" classname="com.example.assignment_3.data.StudyHiveDaoTest" time="0.029" />
+    <testcase name="progressFlow_reEmitsWhenASessionIsInserted" classname="com.example.assignment_3.data.StudyHiveDaoTest" time="0.029" />
+    <testcase name="insertAndUpdateUnit_roundTrips" classname="com.example.assignment_3.data.StudyHiveDaoTest" time="0.032" />
+    <testcase name="emptyDatabase_returnsEmptyResults" classname="com.example.assignment_3.data.StudyHiveDaoTest" time="0.028" />
+    <testcase name="weightingTotal_excludesTheAssessmentBeingEdited" classname="com.example.assignment_3.data.StudyHiveDaoTest" time="0.002" />
+    <testcase name="assessmentForMissingUnit_violatesForeignKey" classname="com.example.assignment_3.data.StudyHiveDaoTest" time="0.03" />
+  </testsuite>
+  <testsuite name="com.example.assignment_3.notifications.ReminderNotificationTest" tests="5" failures="0" errors="0" skipped="0" time="0.913" timestamp="2026-11-01T05:13:20" hostname="localhost">
+    <properties>
+      <property name="device" value="Pixel_8(AVD) - 14" />
+      <property name="flavor" value="" />
+      <property name="project" value=":app" />
+    </properties>
+    <testcase name="reminderWhoseDeadlineMoved_isSuppressed" classname="com.example.assignment_3.notifications.ReminderNotificationTest" time="0.51" />
+    <testcase name="cancel_cancelsTheUniqueWork" classname="com.example.assignment_3.notifications.ReminderNotificationTest" time="0.085" />
+    <testcase name="dueReminder_postsNotificationForPendingAssessment" classname="com.example.assignment_3.notifications.ReminderNotificationTest" time="0.23" />
+    <testcase name="reminderForSubmittedAssessment_isSuppressed" classname="com.example.assignment_3.notifications.ReminderNotificationTest" time="0.057" />
+    <testcase name="rescheduling_replacesInsteadOfDuplicating" classname="com.example.assignment_3.notifications.ReminderNotificationTest" time="0.031" />
+  </testsuite>
+  <testsuite name="com.example.assignment_3.ui.AccessibilityTest" tests="3" failures="0" errors="0" skipped="0" time="37.684" timestamp="2026-11-01T05:13:20" hostname="localhost">
+    <properties>
+      <property name="device" value="Pixel_8(AVD) - 14" />
+      <property name="flavor" value="" />
+      <property name="project" value=":app" />
+    </properties>
+    <testcase name="allScreens_passAccessibilityChecks_darkTheme" classname="com.example.assignment_3.ui.AccessibilityTest" time="18.738" />
+    <testcase name="allScreens_passAccessibilityChecks_lightTheme" classname="com.example.assignment_3.ui.AccessibilityTest" time="13.301" />
+    <testcase name="emptyDashboardAndUnitForm_passChecks_atDoubleFontSize" classname="com.example.assignment_3.ui.AccessibilityTest" time="5.645" />
+  </testsuite>
+  <testsuite name="com.example.assignment_3.ui.ScreenContentTest" tests="8" failures="0" errors="0" skipped="0" time="41.044" timestamp="2026-11-01T05:13:20" hostname="localhost">
+    <properties>
+      <property name="device" value="Pixel_8(AVD) - 14" />
+      <property name="flavor" value="" />
+      <property name="project" value=":app" />
+    </properties>
+    <testcase name="unitForm_typingForwardsToCallbacks" classname="com.example.assignment_3.ui.ScreenContentTest" time="6.402" />
+    <testcase name="unitForm_showsFieldErrors_asTextAndAccessibilitySemantics" classname="com.example.assignment_3.ui.ScreenContentTest" time="5.35" />
+    <testcase name="unitForm_dirtyClose_asksBeforeDiscarding" classname="com.example.assignment_3.ui.ScreenContentTest" time="6.466" />
+    <testcase name="dashboard_emptyState_offersAddUnit" classname="com.example.assignment_3.ui.ScreenContentTest" time="4.855" />
+    <testcase name="unitDetail_emptyListMessage_dependsOnFilter" classname="com.example.assignment_3.ui.ScreenContentTest" time="4.014" />
+    <testcase name="unitDetail_deleteDialog_statesCascadeConsequences" classname="com.example.assignment_3.ui.ScreenContentTest" time="4.733" />
+    <testcase name="unitForm_savingDisablesSaveButton" classname="com.example.assignment_3.ui.ScreenContentTest" time="4.254" />
+    <testcase name="dashboard_loadingAndErrorStates" classname="com.example.assignment_3.ui.ScreenContentTest" time="4.97" />
+  </testsuite>
+  <testsuite name="com.example.assignment_3.ui.StudyHiveAppTest" tests="6" failures="0" errors="0" skipped="0" time="57.533" timestamp="2026-11-01T05:13:20" hostname="localhost">
+    <properties>
+      <property name="device" value="Pixel_8(AVD) - 14" />
+      <property name="flavor" value="" />
+      <property name="project" value=":app" />
+    </properties>
+    <testcase name="duplicateUnitCode_isReportedOnTheField" classname="com.example.assignment_3.ui.StudyHiveAppTest" time="8.977" />
+    <testcase name="deleteAssessment_confirmsThenReturnsAndCancelsReminder" classname="com.example.assignment_3.ui.StudyHiveAppTest" time="7.683" />
+    <testcase name="deleteUnit_cascadesAndReturnsToEmptyDashboard" classname="com.example.assignment_3.ui.StudyHiveAppTest" time="7.29" />
+    <testcase name="unitDetail_addAssessment_opensFormWithValidation" classname="com.example.assignment_3.ui.StudyHiveAppTest" time="7.405" />
+    <testcase name="assessmentDetail_statusSessionAndUndo" classname="com.example.assignment_3.ui.StudyHiveAppTest" time="14.536" />
+    <testcase name="createUnit_fromEmptyDashboard_appearsOnDashboard" classname="com.example.assignment_3.ui.StudyHiveAppTest" time="11.642" />
+  </testsuite>
+</testsuites>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.assignment_3.ui.AssessmentDetailViewModelTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-11-01T05:10:50.049Z" hostname="BINH-BIL-MAC-M1.local" time="0.134">
+  <properties/>
+  <testcase name="editSession_keepsOriginalTimeOfDay" classname="com.example.assignment_3.ui.AssessmentDetailViewModelTest" time="0.113"/>
+  <testcase name="confirmDelete_movesToDeleted" classname="com.example.assignment_3.ui.AssessmentDetailViewModelTest" time="0.006"/>
+  <testcase name="statusChange_isPersisted" classname="com.example.assignment_3.ui.AssessmentDetailViewModelTest" time="0.005"/>
+  <testcase name="logSession_validatesThenSavesAndClosesSheet" classname="com.example.assignment_3.ui.AssessmentDetailViewModelTest" time="0.004"/>
+  <testcase name="deleteThenUndo_restoresTheSameSession" classname="com.example.assignment_3.ui.AssessmentDetailViewModelTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

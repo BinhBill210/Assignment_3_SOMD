@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.assignment_3.ui.DashboardViewModelTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-11-01T05:10:50.221Z" hostname="BINH-BIL-MAC-M1.local" time="0.036">
+  <properties/>
+  <testcase name="splitsOutstandingIntoOverdueSoonAndLater" classname="com.example.assignment_3.ui.DashboardViewModelTest" time="0.017"/>
+  <testcase name="startsLoading_thenNoUnitsWhenDatabaseIsEmpty" classname="com.example.assignment_3.ui.DashboardViewModelTest" time="0.006"/>
+  <testcase name="clockTick_movesAssessmentIntoOverdue" classname="com.example.assignment_3.ui.DashboardViewModelTest" time="0.007"/>
+  <testcase name="reactsToDatabaseChanges" classname="com.example.assignment_3.ui.DashboardViewModelTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

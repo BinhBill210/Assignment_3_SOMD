@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.assignment_3.domain.UnitValidatorTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2026-11-01T05:10:50.036Z" hostname="BINH-BIL-MAC-M1.local" time="0.004">
+  <properties/>
+  <testcase name="blankFields_reportEveryError" classname="com.example.assignment_3.domain.UnitValidatorTest" time="0.002"/>
+  <testcase name="name_lengthBoundary" classname="com.example.assignment_3.domain.UnitValidatorTest" time="0.001"/>
+  <testcase name="targetHours_boundaries" classname="com.example.assignment_3.domain.UnitValidatorTest" time="0.0"/>
+  <testcase name="code_isNormalisedBeforeValidation" classname="com.example.assignment_3.domain.UnitValidatorTest" time="0.0"/>
+  <testcase name="validUnit_hasNoErrors" classname="com.example.assignment_3.domain.UnitValidatorTest" time="0.0"/>
+  <testcase name="malformedCode_isRejected" classname="com.example.assignment_3.domain.UnitValidatorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

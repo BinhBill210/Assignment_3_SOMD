@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.assignment_3.ui.UnitDetailViewModelTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-11-01T05:10:50.295Z" hostname="BINH-BIL-MAC-M1.local" time="0.04">
+  <properties/>
+  <testcase name="deleteFailure_keepsContentAndShowsMessage" classname="com.example.assignment_3.ui.UnitDetailViewModelTest" time="0.024"/>
+  <testcase name="missingUnit_isNotFound" classname="com.example.assignment_3.ui.UnitDetailViewModelTest" time="0.003"/>
+  <testcase name="delete_showsCascadeCountsThenDeletes" classname="com.example.assignment_3.ui.UnitDetailViewModelTest" time="0.003"/>
+  <testcase name="filterAndSort_deriveTheVisibleList" classname="com.example.assignment_3.ui.UnitDetailViewModelTest" time="0.003"/>
+  <testcase name="filter_isRestoredFromSavedState" classname="com.example.assignment_3.ui.UnitDetailViewModelTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

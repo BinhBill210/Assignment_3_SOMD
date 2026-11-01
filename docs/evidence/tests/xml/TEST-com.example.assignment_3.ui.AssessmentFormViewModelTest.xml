@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.assignment_3.ui.AssessmentFormViewModelTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-11-01T05:10:50.185Z" hostname="BINH-BIL-MAC-M1.local" time="0.035">
+  <properties/>
+  <testcase name="loadsUnitCodeAndOtherWeighting" classname="com.example.assignment_3.ui.AssessmentFormViewModelTest" time="0.009"/>
+  <testcase name="unknownUnit_reportsNotFound" classname="com.example.assignment_3.ui.AssessmentFormViewModelTest" time="0.002"/>
+  <testcase name="editing_excludesOwnWeightingAndKeepsStatus" classname="com.example.assignment_3.ui.AssessmentFormViewModelTest" time="0.011"/>
+  <testcase name="save_createsNotStartedAssessmentWithChosenReminder" classname="com.example.assignment_3.ui.AssessmentFormViewModelTest" time="0.005"/>
+  <testcase name="validateForSave_showsErrorsWithoutSaving_soNoPermissionPromptForInvalidForm" classname="com.example.assignment_3.ui.AssessmentFormViewModelTest" time="0.002"/>
+  <testcase name="repositoryFailure_surfacesMessage" classname="com.example.assignment_3.ui.AssessmentFormViewModelTest" time="0.002"/>
+  <testcase name="missingDueDate_blocksSave" classname="com.example.assignment_3.ui.AssessmentFormViewModelTest" time="0.002"/>
+  <testcase name="weightingCap_usesTotalReadAtSaveTime" classname="com.example.assignment_3.ui.AssessmentFormViewModelTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

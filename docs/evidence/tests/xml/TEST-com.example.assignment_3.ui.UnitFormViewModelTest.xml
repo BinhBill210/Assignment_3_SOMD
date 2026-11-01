@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.assignment_3.ui.UnitFormViewModelTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-11-01T05:10:50.339Z" hostname="BINH-BIL-MAC-M1.local" time="0.033">
+  <properties/>
+  <testcase name="draft_survivesProcessDeath_viaSavedStateHandle" classname="com.example.assignment_3.ui.UnitFormViewModelTest" time="0.009"/>
+  <testcase name="duplicateCode_showsFieldError_andDoesNotNavigate" classname="com.example.assignment_3.ui.UnitFormViewModelTest" time="0.005"/>
+  <testcase name="repositoryFailure_keepsInputAndShowsMessage" classname="com.example.assignment_3.ui.UnitFormViewModelTest" time="0.002"/>
+  <testcase name="validSave_normalisesCodeAndConvertsHoursToMinutes" classname="com.example.assignment_3.ui.UnitFormViewModelTest" time="0.004"/>
+  <testcase name="errorsHidden_untilFirstSaveAttempt_thenLive" classname="com.example.assignment_3.ui.UnitFormViewModelTest" time="0.002"/>
+  <testcase name="editMode_missingUnit_reportsNotFound" classname="com.example.assignment_3.ui.UnitFormViewModelTest" time="0.001"/>
+  <testcase name="editMode_loadsExistingUnit_andUpdatesInPlace" classname="com.example.assignment_3.ui.UnitFormViewModelTest" time="0.006"/>
+  <testcase name="targetHours_acceptsDigitsOnly" classname="com.example.assignment_3.ui.UnitFormViewModelTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

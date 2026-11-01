@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.assignment_3.domain.AssessmentValidatorTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-11-01T05:10:49.969Z" hostname="BINH-BIL-MAC-M1.local" time="0.024">
+  <properties/>
+  <testcase name="reminder_inThePast_isRejected" classname="com.example.assignment_3.domain.AssessmentValidatorTest" time="0.013"/>
+  <testcase name="weighting_cannotPushUnitTotalOver100" classname="com.example.assignment_3.domain.AssessmentValidatorTest" time="0.004"/>
+  <testcase name="validAssessment_hasNoErrors" classname="com.example.assignment_3.domain.AssessmentValidatorTest" time="0.0"/>
+  <testcase name="dueDate_requiredAndMustBeFutureForNewAssessments" classname="com.example.assignment_3.domain.AssessmentValidatorTest" time="0.001"/>
+  <testcase name="weighting_fullyAllocatedUnit_rejectsAnyWeighting" classname="com.example.assignment_3.domain.AssessmentValidatorTest" time="0.0"/>
+  <testcase name="title_blankAndTooLong" classname="com.example.assignment_3.domain.AssessmentValidatorTest" time="0.0"/>
+  <testcase name="weighting_boundaries" classname="com.example.assignment_3.domain.AssessmentValidatorTest" time="0.0"/>
+  <testcase name="existingAssessment_mayAlreadyBeOverdue" classname="com.example.assignment_3.domain.AssessmentValidatorTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
