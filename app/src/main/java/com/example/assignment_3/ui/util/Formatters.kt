@@ -52,6 +52,10 @@ fun formatMinutes(totalMinutes: Int): String {
     }
 }
 
+/** "1 assessment", "3 assessments". */
+fun countOf(count: Int, singular: String, plural: String = "${singular}s"): String =
+    "$count ${if (count == 1) singular else plural}"
+
 fun formatElapsed(millis: Long): String {
     val totalSeconds = (millis / 1000).coerceAtLeast(0)
     return String.format(

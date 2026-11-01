@@ -126,7 +126,7 @@ class ScreenContentTest {
             StudyHiveTheme { UnitDetailContent(state, {}, {}, {}, {}, {}, {}, {}, onConfirmDelete = { confirmed = true }, {}) }
         }
         compose.onNodeWithText("Delete COS30017?").assertIsDisplayed()
-        compose.onNodeWithText("4 assessment(s) and 12 study session(s)", substring = true).assertIsDisplayed()
+        compose.onNodeWithText("4 assessments and 12 study sessions", substring = true).assertIsDisplayed()
         compose.onNodeWithText("Delete").performClick()
         assertTrue(confirmed)
     }

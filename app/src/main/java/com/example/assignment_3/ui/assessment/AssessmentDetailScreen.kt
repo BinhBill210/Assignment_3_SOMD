@@ -67,6 +67,7 @@ import com.example.assignment_3.ui.components.ErrorState
 import com.example.assignment_3.ui.components.LoadingState
 import com.example.assignment_3.ui.components.SectionHeader
 import com.example.assignment_3.ui.components.UnitColorDot
+import com.example.assignment_3.ui.util.countOf
 import com.example.assignment_3.ui.util.formatDate
 import com.example.assignment_3.ui.util.formatDueDateTime
 import com.example.assignment_3.ui.util.formatMinutes
@@ -206,7 +207,7 @@ fun AssessmentDetailContent(
     if (content?.showDeleteDialog == true) {
         ConfirmDialog(
             title = "Delete \"${content.item.assessment.title}\"?",
-            text = "Its ${content.sessions.size} study session(s) and any pending reminder will also be removed.",
+            text = "Its ${countOf(content.sessions.size, "study session")} and any pending reminder will also be removed.",
             confirmLabel = "Delete",
             onConfirm = onConfirmDelete,
             onDismiss = onDismissDelete

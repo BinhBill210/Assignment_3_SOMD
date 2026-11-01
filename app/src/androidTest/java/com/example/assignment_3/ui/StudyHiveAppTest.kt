@@ -194,7 +194,7 @@ class StudyHiveAppTest {
         compose.onNodeWithText("Mobile Development").performClick()
         waitForText("40% of 100% weighting allocated")
         compose.onNodeWithContentDescription("Delete unit").performClick()
-        waitForText("This also deletes 1 assessment(s) and 0 study session(s)", substring = true)
+        waitForText("This also deletes 1 assessment and 0 study sessions", substring = true)
         compose.onNodeWithText("Delete").performClick()
 
         waitForText("COS30017 deleted")

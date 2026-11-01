@@ -52,6 +52,7 @@ import com.example.assignment_3.ui.components.ErrorState
 import com.example.assignment_3.ui.components.LoadingState
 import com.example.assignment_3.ui.components.UnitColorDot
 import com.example.assignment_3.ui.theme.unitColor
+import com.example.assignment_3.ui.util.countOf
 import com.example.assignment_3.ui.util.formatMinutes
 
 @Composable
@@ -150,7 +151,8 @@ fun UnitDetailContent(
     content?.pendingDelete?.let { counts ->
         ConfirmDialog(
             title = "Delete ${content.unit.code}?",
-            text = "This also deletes ${counts.assessments} assessment(s) and ${counts.sessions} study session(s), " +
+            text = "This also deletes ${countOf(counts.assessments, "assessment")} and " +
+                "${countOf(counts.sessions, "study session")}, " +
                 "and cancels their reminders. This can't be undone.",
             confirmLabel = "Delete",
             onConfirm = onConfirmDelete,

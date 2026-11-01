@@ -35,6 +35,8 @@ class ThemeContrastTest {
         "onTertiaryContainer / tertiaryContainer" to (s.onTertiaryContainer to s.tertiaryContainer),
         "onSurfaceVariant / surfaceVariant" to (s.onSurfaceVariant to s.surfaceVariant),
         "onErrorContainer / errorContainer" to (s.onErrorContainer to s.errorContainer),
+        "snackbar text (inverseOnSurface / inverseSurface)" to (s.inverseOnSurface to s.inverseSurface),
+        "snackbar action (inversePrimary / inverseSurface)" to (s.inversePrimary to s.inverseSurface),
     )
 
     private fun assertAllPass(name: String, scheme: ColorScheme) {

@@ -30,7 +30,10 @@ internal val LightColorScheme = lightColorScheme(
     surfaceContainerHigh = Color(0xFFF0E6DF),
     surfaceContainerHighest = Neutral90,
     outline = Color(0xFF84746A),
-    outlineVariant = Color(0xFFD7C3B6)
+    outlineVariant = Color(0xFFD7C3B6),
+    inverseSurface = Color(0xFF352F2A),
+    inverseOnSurface = Color(0xFFF9EFE7),
+    inversePrimary = Honey80
 )
 
 internal val DarkColorScheme = darkColorScheme(
@@ -56,7 +59,10 @@ internal val DarkColorScheme = darkColorScheme(
     surfaceContainerHigh = Color(0xFF2F2924),
     surfaceContainerHighest = Color(0xFF3A342E),
     outline = Color(0xFF9E8E82),
-    outlineVariant = NeutralVariant30
+    outlineVariant = NeutralVariant30,
+    inverseSurface = Neutral90,
+    inverseOnSurface = Color(0xFF352F2A),
+    inversePrimary = Honey40
 )
 
 /**
